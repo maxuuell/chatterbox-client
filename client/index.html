@@ -23,22 +23,20 @@
     <!-- your scripts -->
     <script src="env/config.js"></script>
     <script src="scripts/app.js"></script>
+    <script>
+      $(document).ready(function(){app.init()});
+    </script>
   </head>
   <body>
     <div id="main">
       <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
-      <form class='form' action='submit'>
-        <p>
-          Choose your room:
-          <label for="chat-rooms">
-            <select name="rooms" id="chat-rooms">
-              <option value="lobby">Lobby</option>
-            </select>
-          </label>
-        </p>
-        <input id='message' class='form-input' type='text'></input>
-        <button class='form-button' type='button' onclick='app.send()'>Submit</button>
+      <div id="rooms">
+        Choose your room:
+        <select id="roomSelect"></select>
+      </div>
+      <form  action="#" id="send" method="post">
+        <input type="text" name="message" id="message">
+        <input type="submit" name="submit" class="submit">
       </form>
     </div>
     <div id="chats">
